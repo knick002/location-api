@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]
+      base-path: "/manage"
+  health:
+    diskspace:
+      enabled: false
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/location_api?autoReconnect=true&useSSL=false
+    username: location-api
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+
+
